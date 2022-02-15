@@ -1,16 +1,17 @@
 package me.refluxo.lobbysystem.commands;
 
 import me.refluxo.lobbysystem.util.LocationManager;
+import me.refluxo.moduleloader.module.ModuleCommand;
 import me.refluxo.serverlibrary.util.player.PlayerAPI;
 import me.refluxo.serverlibrary.util.player.PlayerManager;
 import net.md_5.bungee.api.ChatMessageType;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class SetLocationCommand implements CommandExecutor {
+@me.refluxo.moduleloader.module.Command(command = "setlocation", usage = "/setlocation <location>", tabCompleterIsEnabled = false, permissions = {"refluxo.lobby.setlocation"}, aliases = {"setl", "sl", "setpos", "setposition"}, description = "Sets Lobby Positions")
+public class SetLocationCommand extends ModuleCommand {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -26,4 +27,5 @@ public class SetLocationCommand implements CommandExecutor {
         }
         return false;
     }
+
 }

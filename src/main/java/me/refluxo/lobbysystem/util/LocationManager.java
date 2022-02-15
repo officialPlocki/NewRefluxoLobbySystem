@@ -1,14 +1,14 @@
 package me.refluxo.lobbysystem.util;
 
-import me.refluxo.serverlibrary.util.files.FileBuilder;
-import me.refluxo.serverlibrary.util.files.YamlConfiguration;
+import me.refluxo.moduleloader.util.files.FileBuilder;
+import me.refluxo.moduleloader.util.files.YamlConfiguration;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 public class LocationManager {
 
     public void saveLocation(String name, Location location) {
-        FileBuilder builder = new FileBuilder("config/library/locations.yml");
+        FileBuilder builder = new FileBuilder("plugins/ModuleLoader/modules/LobbySystem/locations.yml");
         YamlConfiguration yml = builder.getYaml();
         yml.set(name + ".X", location.getX());
         yml.set(name + ".Y", location.getY());
@@ -20,7 +20,7 @@ public class LocationManager {
     }
 
     public Location getLocation(String name) {
-        FileBuilder builder = new FileBuilder("config/library/locations.yml");
+        FileBuilder builder = new FileBuilder("plugins/ModuleLoader/modules/LobbySystem/locations.yml");
         YamlConfiguration yml = builder.getYaml();
         return new Location(Bukkit.getWorld(yml.getString(name + ".WORLD")), yml.getDouble(name + ".X"), yml.getDouble(name + ".Y"), yml.getDouble(name + ".Z"), (float) yml.getDouble(name + ".YAW"), (float) yml.getDouble(name + ".PITCH"));
     }

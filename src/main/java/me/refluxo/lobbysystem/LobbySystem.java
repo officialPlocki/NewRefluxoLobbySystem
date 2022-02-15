@@ -1,33 +1,43 @@
 package me.refluxo.lobbysystem;
 
-import me.refluxo.lobbysystem.commands.SetLocationCommand;
-import me.refluxo.lobbysystem.listeners.BuildListener;
-import me.refluxo.lobbysystem.listeners.InteractListener;
-import me.refluxo.lobbysystem.listeners.JoinListener;
-import me.refluxo.lobbysystem.util.VisualGUI;
-import me.refluxo.serverlibrary.util.player.PlayerManager;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.java.JavaPlugin;
+import me.refluxo.moduleloader.ModuleLoader;
+import me.refluxo.moduleloader.module.Module;
+import me.refluxo.moduleloader.module.ModuleManager;
+import me.refluxo.moduleloader.module.PluginModule;
+import me.refluxo.moduleloader.util.mysql.MySQLService;
+import org.bukkit.plugin.Plugin;
 
-import java.util.Objects;
-
-public final class LobbySystem extends JavaPlugin {
+@Module(moduleName = "LobbySystem")
+public final class LobbySystem extends PluginModule {
 
     @Override
-    public void onEnable() {
-        // Plugin startup logic
-        VisualGUI.init();
-        Bukkit.getPluginManager().registerEvents(new BuildListener(), this);
-        Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
-        Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
-        Bukkit.getPluginManager().registerEvents(new VisualGUI(), this);
-        Objects.requireNonNull(this.getCommand("setlocation")).setExecutor(new SetLocationCommand());
+    public void enableModule() {
+
     }
 
     @Override
-    public void onDisable() {
-        VisualGUI.players.forEach(player -> {
-            VisualGUI.remove(new PlayerManager().getPlayer(player));
-        });
+    public void disableModule() {
+
     }
+
+    @Override
+    public Plugin getPlugin() {
+        return super.getPlugin();
+    }
+
+    @Override
+    public ModuleManager getModuleManager() {
+        return super.getModuleManager();
+    }
+
+    @Override
+    public MySQLService getMySQLService() {
+        return super.getMySQLService();
+    }
+
+    @Override
+    public ModuleLoader getModuleLoader() {
+        return super.getModuleLoader();
+    }
+
 }

@@ -79,7 +79,13 @@
         </dependency>
         <dependency>
             <groupId>me.refluxo</groupId>
-            <artifactId>server-libary</artifactId>
+            <artifactId>server-library</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.refluxo</groupId>
+            <artifactId>ModuleLoader</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>

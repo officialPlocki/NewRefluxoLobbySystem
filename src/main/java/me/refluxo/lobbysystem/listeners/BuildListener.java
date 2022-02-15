@@ -5,6 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
+@me.refluxo.moduleloader.module.Listener
 public class BuildListener implements Listener {
 
     @EventHandler
