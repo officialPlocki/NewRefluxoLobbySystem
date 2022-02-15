@@ -1,5 +1,6 @@
 package me.refluxo.lobbysystem.listeners;
 
+import me.refluxo.moduleloader.module.ModuleListener;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -7,7 +8,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-@me.refluxo.moduleloader.module.Listener
+@ModuleListener
 public class InteractListener implements Listener {
 
     @EventHandler

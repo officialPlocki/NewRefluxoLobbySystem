@@ -1,11 +1,12 @@
 package me.refluxo.lobbysystem.listeners;
 
 import me.refluxo.lobbysystem.util.LocationManager;
+import me.refluxo.moduleloader.module.ModuleListener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-@me.refluxo.moduleloader.module.Listener
+@ModuleListener
 public class JoinListener implements Listener {
 
     @EventHandler

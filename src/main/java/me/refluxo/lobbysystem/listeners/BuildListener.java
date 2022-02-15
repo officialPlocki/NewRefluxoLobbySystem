@@ -1,11 +1,12 @@
 package me.refluxo.lobbysystem.listeners;
 
+import me.refluxo.moduleloader.module.ModuleListener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-@me.refluxo.moduleloader.module.Listener
+@ModuleListener
 public class BuildListener implements Listener {
 
     @EventHandler
