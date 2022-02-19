@@ -3,7 +3,6 @@ package me.refluxo.lobbysystem.commands;
 import me.refluxo.lobbysystem.util.LocationManager;
 import me.refluxo.moduleloader.module.ModuleCommand;
 import me.refluxo.moduleloader.module.ModuleCommandExecutor;
-import me.refluxo.moduleloader.service.ServiceRegistry;
 import me.refluxo.serverlibrary.util.player.PlayerAPI;
 import me.refluxo.serverlibrary.util.player.PlayerManager;
 import net.md_5.bungee.api.ChatMessageType;
@@ -17,7 +16,7 @@ public class SetLocationCommand extends ModuleCommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        var playerManager = ServiceRegistry.access(PlayerManager.class);
+        var playerManager = new PlayerManager();
         if(sender.hasPermission("refluxo.lobby.setlocation")) {
             if(args.length == 1) {
                 playerManager.getPlayer((Player) sender).sendMessage(PlayerAPI.MessageType.WARNING, ChatMessageType.ACTION_BAR, "Du hast die Position " + args[0] + " gesetzt.");
