@@ -9,6 +9,12 @@ import java.io.IOException;
 
 public class LocationManager {
 
+    /**
+     * This function saves a location to a file
+     *
+     * @param name The name of the location.
+     * @param location The location to save
+     */
     public void saveLocation(String name, Location location) {
         FileBuilder builder = new FileBuilder("plugins/ModuleLoader/modules/LobbySystem/locations.yml");
         YamlConfiguration yml = builder.getYaml();
@@ -28,6 +34,12 @@ public class LocationManager {
         builder.save();
     }
 
+    /**
+     * This function returns a Location object that is stored in the locations.yml file
+     *
+     * @param name The name of the location.
+     * @return A Location object.
+     */
     public Location getLocation(String name) {
         FileBuilder builder = new FileBuilder("plugins/ModuleLoader/modules/LobbySystem/locations.yml");
         YamlConfiguration yml = builder.getYaml();

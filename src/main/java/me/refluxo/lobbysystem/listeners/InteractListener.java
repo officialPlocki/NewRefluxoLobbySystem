@@ -11,11 +11,21 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 @ModuleListener
 public class InteractListener implements Listener {
 
+    /**
+     * When a player drops an item, cancel the event.
+     *
+     * @param event The event that was fired.
+     */
     @EventHandler
     public void onDrop(PlayerDropItemEvent event) {
         event.setCancelled(true);
     }
 
+    /**
+     * If the entity is not an armor stand, cancel the event
+     *
+     * @param event The event that was fired.
+     */
     @EventHandler
     public void onSpawn(EntitySpawnEvent event) {
         if(!event.getEntityType().equals(EntityType.ARMOR_STAND)) {
@@ -26,6 +36,11 @@ public class InteractListener implements Listener {
         }
     }
 
+    /**
+     * This function is called when an entity is damaged
+     *
+     * @param event The event that is being cancelled.
+     */
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
         event.setCancelled(true);

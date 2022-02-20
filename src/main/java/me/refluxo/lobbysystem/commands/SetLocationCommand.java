@@ -14,6 +14,15 @@ import org.jetbrains.annotations.NotNull;
 @ModuleCommand(command = "setlocation", usage = "/setlocation <location>", tabCompleterIsEnabled = false, permissions = {"refluxo.lobby.setlocation"}, aliases = {"setl", "sl", "setpos", "setposition"}, description = "Sets Lobby Positions")
 public class SetLocationCommand extends ModuleCommandExecutor {
 
+    /**
+     * This function is called when a player uses the command /setlocation
+     *
+     * @param sender The player who executed the command.
+     * @param command The command that was used.
+     * @param label The name of the command.
+     * @param args The arguments that were passed to the command.
+     * @return Nothing.
+     */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         var playerManager = new PlayerManager();
